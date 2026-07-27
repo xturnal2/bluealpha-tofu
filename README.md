@@ -16,8 +16,11 @@ users learn a custom wrapper. Every stack is a standalone root module with:
 ## Template catalog
 
 The repository is being built incrementally so each stack has a focused review
-and release history. No stack is considered available until its implementation,
-documentation, examples, and validation land together.
+and release history.
+
+| Cloud | Stack | Description | Cost-sensitive flags |
+|---|---|---|---|
+| AWS | [VPC](templates/aws/vpc) | Multi-AZ VPC with public/private subnets and optional NAT gateways | `enable_nat_gateway`, `single_nat_gateway`, `enable_flow_logs` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
@@ -32,7 +35,7 @@ Prerequisites:
 
 ```bash
 git clone https://github.com/xturnal2/bluealpha-tofu.git
-cd bluealpha-tofu/templates/<cloud>/<stack>
+cd bluealpha-tofu/templates/aws/vpc
 cp example.tfvars terraform.tfvars
 # Edit terraform.tfvars.
 tofu init
