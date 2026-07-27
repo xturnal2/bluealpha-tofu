@@ -1,0 +1,73 @@
+# BlueAlpha OpenTofu Templates
+
+Production-minded, reusable [OpenTofu](https://opentofu.org/) stacks for common
+cloud workloads.
+
+The catalog starts with AWS and Azure and is designed to grow without making
+users learn a custom wrapper. Every stack is a standalone root module with:
+
+- secure defaults and explicit opt-ins for public access or recurring costs;
+- a stack-specific README describing architecture, cost considerations, inputs,
+  outputs, and operational notes;
+- an `example.tfvars` file that can be copied and adapted;
+- input validation and provider/version constraints;
+- consistent tags and resource naming.
+
+## Template catalog
+
+The repository is being built incrementally so each stack has a focused review
+and release history. No stack is considered available until its implementation,
+documentation, examples, and validation land together.
+
+See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
+proposed delivery order.
+
+## Quick start
+
+Prerequisites:
+
+- OpenTofu 1.8 or newer
+- credentials for the selected cloud provider
+- an AWS or Azure subscription/account with permission to create the resources
+
+```bash
+git clone https://github.com/xturnal2/bluealpha-tofu.git
+cd bluealpha-tofu/templates/<cloud>/<stack>
+cp example.tfvars terraform.tfvars
+# Edit terraform.tfvars.
+tofu init
+tofu plan
+tofu apply
+```
+
+OpenTofu automatically reads `terraform.tfvars`. Keep that file local because it
+may contain environment-specific or sensitive values.
+
+## Design contract
+
+Templates in this repository follow these rules:
+
+1. A template is directly runnable; consumers do not need to copy internal
+   modules or install a wrapper.
+2. Defaults avoid public ingress and optional managed services that create
+   material recurring charges.
+3. Every optional behavior is exposed as a documented variable.
+4. Resource names include a user-provided project and environment.
+5. Tags identify the project, environment, template, and OpenTofu ownership.
+6. Outputs expose IDs needed by downstream stacks without returning secrets.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the acceptance checklist for new
+templates and [ROADMAP.md](ROADMAP.md) for the incremental delivery plan.
+
+## Versioning and support
+
+The repository uses semantic version tags. Pin a release when consuming a
+template in automation, and review release notes before upgrading.
+
+These templates are starting points, not a substitute for an architecture and
+security review. Cloud costs, service availability, and compliance requirements
+vary by account and region. Always inspect `tofu plan` before applying.
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).

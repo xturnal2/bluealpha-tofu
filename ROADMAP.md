@@ -1,0 +1,109 @@
+# Template roadmap
+
+This roadmap keeps the repository useful at every step while giving each stack
+a focused commit and review. It is directional: customer demand can move a stack
+earlier, and implementation does not begin until its scope is selected.
+
+## Delivery strategy
+
+Repository foundation and each stack are separate changes. A stack lands only
+when its code, README, example variables, and automated validation are complete.
+Avoid placeholder directories or partially documented templates on `main`.
+
+The normal commit sequence is:
+
+1. `chore(repo): scaffold public OpenTofu template catalog`
+2. `feat(<cloud>): add <stack> template`
+3. `fix(<cloud>): ...` or `docs(<cloud>): ...` only when follow-up is genuinely
+   independent of the stack's initial implementation
+
+Closely related stacks may be delivered as a small group, but each remains a
+separate commit so consumers can follow the history and releases can call out
+exactly what changed.
+
+## Proposed sequence
+
+### Group 1: Network foundations
+
+These provide the base IDs and subnet boundaries used by later workload stacks.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 1 | `aws/vpc` | Multi-AZ VPC, public/private subnets, routing | zone count, CIDRs, NAT topology, flow logs |
+| 2 | `azure/vnet` | VNet, map-driven subnets, NSGs | CIDRs, service endpoints, NSGs, NAT gateway |
+
+Suggested commits:
+
+- `feat(aws): add configurable VPC foundation`
+- `feat(azure): add configurable virtual network foundation`
+
+### Group 2: Static web delivery
+
+These are low-friction examples customers can evaluate without deploying an
+application runtime.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 3 | `aws/static-website` | Private S3 origin and CloudFront | versioning, logs, SPA fallback, price class |
+| 4 | `azure/static-website` | Storage static site and optional Front Door | replication, versioning, retention, CDN |
+
+Suggested commits:
+
+- `feat(aws): add secure static website template`
+- `feat(azure): add static website template`
+
+### Group 3: Container application runtimes
+
+Networking inputs should accept outputs from Group 1 without coupling the
+stacks through local state.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 5 | `aws/ecs-fargate-service` | ECS service, ALB, autoscaling, logs | CPU/memory, desired count, public ingress, scaling |
+| 6 | `azure/container-apps` | Environment, app, ingress, scaling, logs | CPU/memory, min/max replicas, ingress, revisions |
+
+### Group 4: Managed PostgreSQL
+
+Database stacks should default to private connectivity, encryption, backups,
+and deletion protection appropriate to the selected environment.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 7 | `aws/rds-postgresql` | RDS PostgreSQL and subnet group | instance class, Multi-AZ, backup retention, protection |
+| 8 | `azure/postgresql-flexible` | Flexible Server and private DNS | SKU, zone redundancy, storage, backup retention |
+
+### Group 5: Serverless HTTP APIs
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 9 | `aws/lambda-api` | Lambda, HTTP API, logs, least-privilege role | runtime, memory, timeout, CORS, log retention |
+| 10 | `azure/functions-http` | Function App, plan, storage, monitoring | runtime, plan tier, scaling, CORS, retention |
+
+## Stack definition of done
+
+Every stack change must include:
+
+- bounded OpenTofu and provider version constraints;
+- safe defaults, standard tags, variable validation, and useful outputs;
+- `README.md` covering architecture, prerequisites, authentication, costs,
+  security, operations, inputs, outputs, and destroy behavior;
+- `example.tfvars` with no secrets or customer-specific identifiers;
+- successful `tofu fmt -check`, `tofu init -backend=false`, and
+  `tofu validate`;
+- a review of flags that create public access, reduce resilience, weaken
+  deletion protection, or add material recurring charges;
+- an update to the root catalog and dependency-update configuration.
+
+When cloud credentials and a disposable subscription/account are available, a
+redacted plan or apply/destroy smoke test should be attached to the pull request.
+
+## Release approach
+
+- Use pull requests even for single-stack commits.
+- Tag the first stable stack catalog as `v0.1.0`.
+- Continue `0.x` releases while interfaces may change based on customer use.
+- Record breaking input/output changes in release notes and provide a migration
+  example.
+- Graduate to `v1.0.0` after at least one AWS and one Azure stack have been
+  exercised in customer-like environments and the repository conventions have
+  stabilized.
