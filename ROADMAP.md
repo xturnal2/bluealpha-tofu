@@ -44,7 +44,7 @@ application runtime.
 
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
-| 3 | `aws/static-website` | Private S3 origin and CloudFront | versioning, logs, SPA fallback, price class |
+| 3 | [`aws/static-website`](templates/aws/static-website) — available | Private S3 origin and CloudFront | versioning, logs, SPA fallback, price class |
 | 4 | `azure/static-website` | Storage static site and optional Front Door | replication, versioning, retention, CDN |
 
 Suggested commits:
