@@ -30,7 +30,7 @@ These provide the base IDs and subnet boundaries used by later workload stacks.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 1 | [`aws/vpc`](templates/aws/vpc) — available | Multi-AZ VPC, public/private subnets, routing | zone count, CIDRs, NAT topology, flow logs |
-| 2 | `azure/vnet` | VNet, map-driven subnets, NSGs | CIDRs, service endpoints, NSGs, NAT gateway |
+| 2 | [`azure/vnet`](templates/azure/vnet) — available | VNet, map-driven subnets, NSGs | CIDRs, service endpoints, delegations, NSGs, NAT gateway |
 
 Suggested commits:
 

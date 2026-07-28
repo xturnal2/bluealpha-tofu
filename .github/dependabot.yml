@@ -9,3 +9,8 @@ updates:
     directory: /templates/aws/vpc
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/vnet
+    schedule:
+      interval: monthly
