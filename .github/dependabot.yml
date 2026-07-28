@@ -4,3 +4,8 @@ updates:
     directory: /
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/aws/vpc
+    schedule:
+      interval: monthly
