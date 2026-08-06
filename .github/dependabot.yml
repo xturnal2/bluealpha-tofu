@@ -29,3 +29,8 @@ updates:
     directory: /templates/azure/static-website
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/container-apps
+    schedule:
+      interval: monthly
