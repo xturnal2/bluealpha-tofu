@@ -19,3 +19,8 @@ updates:
     directory: /templates/azure/vnet
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/static-website
+    schedule:
+      interval: monthly
