@@ -23,6 +23,7 @@ and release history.
 | AWS | [VPC](templates/aws/vpc) | Multi-AZ VPC with public/private subnets and optional NAT gateways | `enable_nat_gateway`, `single_nat_gateway`, `enable_flow_logs` |
 | AWS | [Static website](templates/aws/static-website) | Private S3 origin delivered through CloudFront with TLS | `enable_access_logging`, `enable_versioning`, `price_class` |
 | AWS | [ECS Fargate service](templates/aws/ecs-fargate-service) | Container service behind an Application Load Balancer | `desired_count`, `use_fargate_spot`, `enable_autoscaling` |
+| AWS | [RDS PostgreSQL](templates/aws/rds-postgresql) | Private encrypted PostgreSQL with backups and managed credentials | `multi_az`, `deletion_protection`, `backup_retention_days` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Container Apps](templates/azure/container-apps) | Consumption-scaled container app with ingress and logs | `min_replicas`, `max_replicas`, `external_ingress_enabled` |
