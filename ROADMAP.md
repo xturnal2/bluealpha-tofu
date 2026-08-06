@@ -59,7 +59,7 @@ stacks through local state.
 
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
-| 5 | `aws/ecs-fargate-service` | ECS service, ALB, autoscaling, logs | CPU/memory, desired count, public ingress, scaling |
+| 5 | [`aws/ecs-fargate-service`](templates/aws/ecs-fargate-service) — available | ECS service, ALB, autoscaling, logs | CPU/memory, desired count, public ingress, scaling |
 | 6 | `azure/container-apps` | Environment, app, ingress, scaling, logs | CPU/memory, min/max replicas, ingress, revisions |
 
 ### Group 4: Managed PostgreSQL
