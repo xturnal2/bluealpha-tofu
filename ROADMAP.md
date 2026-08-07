@@ -76,7 +76,7 @@ and deletion protection appropriate to the selected environment.
 
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
-| 9 | `aws/lambda-api` | Lambda, HTTP API, logs, least-privilege role | runtime, memory, timeout, CORS, log retention |
+| 9 | [`aws/lambda-api`](templates/aws/lambda-api) — available | Lambda, HTTP API, logs, least-privilege role | runtime, memory, timeout, CORS, log retention |
 | 10 | `azure/functions-http` | Function App, plan, storage, monitoring | runtime, plan tier, scaling, CORS, retention |
 
 ## Stack definition of done
