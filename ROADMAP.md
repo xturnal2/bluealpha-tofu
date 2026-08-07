@@ -70,7 +70,7 @@ and deletion protection appropriate to the selected environment.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 7 | [`aws/rds-postgresql`](templates/aws/rds-postgresql) — available | RDS PostgreSQL and subnet group | instance class, Multi-AZ, backup retention, protection |
-| 8 | `azure/postgresql-flexible` | Flexible Server and private DNS | SKU, zone redundancy, storage, backup retention |
+| 8 | [`azure/postgresql-flexible`](templates/azure/postgresql-flexible) — available | Flexible Server and private DNS | SKU, zone redundancy, storage, backup retention |
 
 ### Group 5: Serverless HTTP APIs
 

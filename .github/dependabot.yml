@@ -39,3 +39,8 @@ updates:
     directory: /templates/azure/container-apps
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/postgresql-flexible
+    schedule:
+      interval: monthly

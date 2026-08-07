@@ -27,6 +27,7 @@ and release history.
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Container Apps](templates/azure/container-apps) | Consumption-scaled container app with ingress and logs | `min_replicas`, `max_replicas`, `external_ingress_enabled` |
+| Azure | [PostgreSQL Flexible Server](templates/azure/postgresql-flexible) | Private managed PostgreSQL with DNS and backups | `sku_name`, `high_availability_mode`, `geo_redundant_backup_enabled` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
