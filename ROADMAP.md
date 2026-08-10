@@ -79,6 +79,17 @@ and deletion protection appropriate to the selected environment.
 | 9 | [`aws/lambda-api`](templates/aws/lambda-api) — available | Lambda, HTTP API, logs, least-privilege role | runtime, memory, timeout, CORS, log retention |
 | 10 | [`azure/functions-http`](templates/azure/functions-http) — available | Function App, plan, storage, monitoring | runtime, plan tier, scaling, CORS, retention |
 
+### Group 6: Messaging and NoSQL data
+
+These stacks provide durable asynchronous messaging and serverless persistence
+for the application runtimes without coupling consumers to local state.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 11 | [`aws/sqs-queue`](templates/aws/sqs-queue) — available | Encrypted queue and restricted dead-letter queue | FIFO, retention, visibility timeout, KMS |
+| 12 | `azure/service-bus-queue` | Service Bus namespace, queue, and dead-letter behavior | tier, capacity, sessions, TTL |
+| 13 | `aws/dynamodb-table` | DynamoDB table, recovery, TTL, and streams | billing mode, indexes, deletion protection, backups |
+
 ## Stack definition of done
 
 Every stack change must include:
