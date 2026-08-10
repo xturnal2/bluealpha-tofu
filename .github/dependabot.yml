@@ -59,3 +59,8 @@ updates:
     directory: /templates/azure/functions-http
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/service-bus-queue
+    schedule:
+      interval: monthly

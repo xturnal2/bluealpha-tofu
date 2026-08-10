@@ -87,7 +87,7 @@ for the application runtimes without coupling consumers to local state.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 11 | [`aws/sqs-queue`](templates/aws/sqs-queue) — available | Encrypted queue and restricted dead-letter queue | FIFO, retention, visibility timeout, KMS |
-| 12 | `azure/service-bus-queue` | Service Bus namespace, queue, and dead-letter behavior | tier, capacity, sessions, TTL |
+| 12 | [`azure/service-bus-queue`](templates/azure/service-bus-queue) — available | Service Bus namespace, queue, and dead-letter behavior | tier, capacity, sessions, TTL |
 | 13 | `aws/dynamodb-table` | DynamoDB table, recovery, TTL, and streams | billing mode, indexes, deletion protection, backups |
 
 ## Stack definition of done
