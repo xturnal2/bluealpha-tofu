@@ -27,6 +27,7 @@ and release history.
 | AWS | [Lambda HTTP API](templates/aws/lambda-api) | Packaged Lambda behind an HTTP API with logs and throttling | `memory_size`, `reserved_concurrent_executions`, `throttle_rate_limit` |
 | AWS | [SQS queue](templates/aws/sqs-queue) | Encrypted queue with optional FIFO behavior and a restricted DLQ | `create_dead_letter_queue`, `fifo_queue`, `kms_master_key_id` |
 | AWS | [DynamoDB table](templates/aws/dynamodb-table) | Serverless key-value table with recovery, TTL, streams, and indexes | `billing_mode`, `deletion_protection_enabled`, `point_in_time_recovery_enabled` |
+| AWS | [ECR repository](templates/aws/ecr-repository) | Private container registry with immutable tags, scanning, and image retention | `image_tag_mutability`, `scan_on_push`, `max_image_count` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Container Apps](templates/azure/container-apps) | Consumption-scaled container app with ingress and logs | `min_replicas`, `max_replicas`, `external_ingress_enabled` |
