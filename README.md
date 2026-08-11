@@ -36,6 +36,7 @@ and release history.
 | Azure | [Functions HTTP](templates/azure/functions-http) | Linux Function App with storage, monitoring, and HTTP controls | `plan_sku_name`, `maximum_instance_count`, `ip_restrictions` |
 | Azure | [Service Bus queue](templates/azure/service-bus-queue) | Entra-authenticated namespace and queue with DLQ behavior | `sku`, `premium_messaging_units`, `requires_session` |
 | Azure | [Container Registry](templates/azure/container-registry) | Managed container registry with Entra RBAC and Premium network/resilience options | `sku`, `public_network_access_enabled`, `georeplications` |
+| Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.

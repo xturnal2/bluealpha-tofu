@@ -84,3 +84,8 @@ updates:
     directory: /templates/azure/container-registry
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/key-vault
+    schedule:
+      interval: monthly
