@@ -74,3 +74,8 @@ updates:
     directory: /templates/azure/service-bus-queue
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/container-registry
+    schedule:
+      interval: monthly

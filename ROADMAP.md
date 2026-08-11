@@ -98,6 +98,7 @@ the existing application runtimes.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 14 | [`aws/ecr-repository`](templates/aws/ecr-repository) — available | Private container image repository with scanning and retention | tag mutability, lifecycle limits, KMS, cross-account access |
+| 15 | [`azure/container-registry`](templates/azure/container-registry) — available | Entra-authenticated container registry with optional Premium controls | SKU, public access, network rules, geo-replication |
 
 ## Stack definition of done
 
