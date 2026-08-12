@@ -44,6 +44,7 @@ and release history.
 | Azure | [Event Hubs](templates/azure/event-hubs) | Entra-authenticated event stream with partitions, retention, and consumer groups | `sku`, `partition_count`, `auto_inflate_enabled` |
 | Azure | [Container Registry](templates/azure/container-registry) | Managed container registry with Entra RBAC and Premium network/resilience options | `sku`, `public_network_access_enabled`, `georeplications` |
 | Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
+| Azure | [Managed identity](templates/azure/managed-identity) | User-assigned workload identity with OIDC federation and scoped RBAC | `federated_credentials`, `role_assignments`, `isolation_scope` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.

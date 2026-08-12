@@ -124,3 +124,8 @@ updates:
     directory: /templates/azure/key-vault
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/managed-identity
+    schedule:
+      interval: monthly
