@@ -36,6 +36,7 @@ and release history.
 | Azure | [PostgreSQL Flexible Server](templates/azure/postgresql-flexible) | Private managed PostgreSQL with DNS and backups | `sku_name`, `high_availability_mode`, `geo_redundant_backup_enabled` |
 | Azure | [Functions HTTP](templates/azure/functions-http) | Linux Function App with storage, monitoring, and HTTP controls | `plan_sku_name`, `maximum_instance_count`, `ip_restrictions` |
 | Azure | [Service Bus queue](templates/azure/service-bus-queue) | Entra-authenticated namespace and queue with DLQ behavior | `sku`, `premium_messaging_units`, `requires_session` |
+| Azure | [Event Grid topic](templates/azure/event-grid-topic) | Entra-authenticated event fan-out with scoped publishers and subscriptions | `local_auth_enabled`, `allowed_ip_cidrs`, `event_subscriptions` |
 | Azure | [Container Registry](templates/azure/container-registry) | Managed container registry with Entra RBAC and Premium network/resilience options | `sku`, `public_network_access_enabled`, `georeplications` |
 | Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
 
