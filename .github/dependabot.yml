@@ -46,6 +46,11 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/eventbridge-bus
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/aws/dynamodb-table
     schedule:
       interval: monthly
