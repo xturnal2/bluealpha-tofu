@@ -92,6 +92,7 @@ for the application runtimes without coupling consumers to local state.
 | 16 | [`aws/sns-topic`](templates/aws/sns-topic) — available | Encrypted fan-out topic with filtering and delivery controls | FIFO, subscriptions, KMS, archives |
 | 19 | [`azure/event-grid-topic`](templates/azure/event-grid-topic) — available | Entra-authenticated custom event topic with common destinations | schema, local auth, IP rules, subscriptions |
 | 22 | [`aws/eventbridge-bus`](templates/aws/eventbridge-bus) — available | Custom event bus with scoped publishers and replay archive | KMS, archive retention, cross-account publishing |
+| 23 | [`azure/event-hubs`](templates/azure/event-hubs) — available | Entra-authenticated partitioned event stream with consumer groups | tier, capacity, partitions, retention, network rules |
 
 ### Group 7: Artifact registries and platform security
 

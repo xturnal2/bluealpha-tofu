@@ -40,6 +40,7 @@ and release history.
 | Azure | [Functions HTTP](templates/azure/functions-http) | Linux Function App with storage, monitoring, and HTTP controls | `plan_sku_name`, `maximum_instance_count`, `ip_restrictions` |
 | Azure | [Service Bus queue](templates/azure/service-bus-queue) | Entra-authenticated namespace and queue with DLQ behavior | `sku`, `premium_messaging_units`, `requires_session` |
 | Azure | [Event Grid topic](templates/azure/event-grid-topic) | Entra-authenticated event fan-out with scoped publishers and subscriptions | `local_auth_enabled`, `allowed_ip_cidrs`, `event_subscriptions` |
+| Azure | [Event Hubs](templates/azure/event-hubs) | Entra-authenticated event stream with partitions, retention, and consumer groups | `sku`, `partition_count`, `auto_inflate_enabled` |
 | Azure | [Container Registry](templates/azure/container-registry) | Managed container registry with Entra RBAC and Premium network/resilience options | `sku`, `public_network_access_enabled`, `georeplications` |
 | Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
 
