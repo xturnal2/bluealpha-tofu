@@ -29,6 +29,7 @@ and release history.
 | AWS | [SNS topic](templates/aws/sns-topic) | Encrypted pub/sub topic with filters, DLQs, and optional FIFO delivery | `fifo_topic`, `subscriptions`, `archive_policy_days` |
 | AWS | [DynamoDB table](templates/aws/dynamodb-table) | Serverless key-value table with recovery, TTL, streams, and indexes | `billing_mode`, `deletion_protection_enabled`, `point_in_time_recovery_enabled` |
 | AWS | [ECR repository](templates/aws/ecr-repository) | Private container registry with immutable tags, scanning, and image retention | `image_tag_mutability`, `scan_on_push`, `max_image_count` |
+| AWS | [Secrets Manager secret](templates/aws/secrets-manager-secret) | Metadata-only secret boundary with recovery, replicas, and scoped access | `recovery_window_in_days`, `replica_regions`, `allowed_reader_principal_arns` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Container Apps](templates/azure/container-apps) | Consumption-scaled container app with ingress and logs | `min_replicas`, `max_replicas`, `external_ingress_enabled` |
