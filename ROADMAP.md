@@ -112,6 +112,7 @@ behavior of the static-site templates.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 20 | [`aws/s3-bucket`](templates/aws/s3-bucket) — available | Private encrypted bucket with version recovery and lifecycle hygiene | versioning, KMS, expiration, force destroy |
+| 21 | [`azure/storage-account`](templates/azure/storage-account) — available | Entra-first private object storage with versioning and recovery | redundancy, shared keys, public access, retention |
 
 ## Stack definition of done
 
