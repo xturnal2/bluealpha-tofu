@@ -22,6 +22,7 @@ and release history.
 |---|---|---|---|
 | AWS | [VPC](templates/aws/vpc) | Multi-AZ VPC with public/private subnets and optional NAT gateways | `enable_nat_gateway`, `single_nat_gateway`, `enable_flow_logs` |
 | AWS | [Static website](templates/aws/static-website) | Private S3 origin delivered through CloudFront with TLS | `enable_access_logging`, `enable_versioning`, `price_class` |
+| AWS | [S3 bucket](templates/aws/s3-bucket) | Private encrypted object storage with versioning and lifecycle controls | `force_destroy`, `versioning_enabled`, `noncurrent_version_expiration_days` |
 | AWS | [ECS Fargate service](templates/aws/ecs-fargate-service) | Container service behind an Application Load Balancer | `desired_count`, `use_fargate_spot`, `enable_autoscaling` |
 | AWS | [RDS PostgreSQL](templates/aws/rds-postgresql) | Private encrypted PostgreSQL with backups and managed credentials | `multi_az`, `deletion_protection`, `backup_retention_days` |
 | AWS | [Lambda HTTP API](templates/aws/lambda-api) | Packaged Lambda behind an HTTP API with logs and throttling | `memory_size`, `reserved_concurrent_executions`, `throttle_rate_limit` |

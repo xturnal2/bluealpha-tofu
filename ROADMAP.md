@@ -104,6 +104,15 @@ the existing application runtimes.
 | 17 | [`azure/key-vault`](templates/azure/key-vault) — available | RBAC-authorized vault boundary with recovery and network controls | tier, purge protection, public access, role assignments |
 | 18 | [`aws/secrets-manager-secret`](templates/aws/secrets-manager-secret) — available | Metadata-only secret boundary with recovery and regional replicas | KMS, recovery, replicas, access policy |
 
+### Group 8: General-purpose object storage
+
+These stacks provide private application storage without the website-delivery
+behavior of the static-site templates.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 20 | [`aws/s3-bucket`](templates/aws/s3-bucket) — available | Private encrypted bucket with version recovery and lifecycle hygiene | versioning, KMS, expiration, force destroy |
+
 ## Stack definition of done
 
 Every stack change must include:

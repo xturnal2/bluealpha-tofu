@@ -16,6 +16,11 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/s3-bucket
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/aws/ecs-fargate-service
     schedule:
       interval: monthly
