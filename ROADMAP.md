@@ -105,6 +105,7 @@ the existing application runtimes.
 | 15 | [`azure/container-registry`](templates/azure/container-registry) — available | Entra-authenticated container registry with optional Premium controls | SKU, public access, network rules, geo-replication |
 | 17 | [`azure/key-vault`](templates/azure/key-vault) — available | RBAC-authorized vault boundary with recovery and network controls | tier, purge protection, public access, role assignments |
 | 18 | [`aws/secrets-manager-secret`](templates/aws/secrets-manager-secret) — available | Metadata-only secret boundary with recovery and regional replicas | KMS, recovery, replicas, access policy |
+| 24 | [`aws/kms-key`](templates/aws/kms-key) — available | Rotating symmetric encryption key and alias | rotation, deletion window, multi-Region, key users |
 
 ### Group 8: General-purpose object storage
 
