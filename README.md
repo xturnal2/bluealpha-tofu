@@ -34,6 +34,7 @@ and release history.
 | AWS | [Secrets Manager secret](templates/aws/secrets-manager-secret) | Metadata-only secret boundary with recovery, replicas, and scoped access | `recovery_window_in_days`, `replica_regions`, `allowed_reader_principal_arns` |
 | AWS | [KMS key](templates/aws/kms-key) | Rotating symmetric encryption key with guarded deletion and scoped users | `rotation_period_in_days`, `deletion_window_in_days`, `multi_region` |
 | AWS | [CloudWatch log group](templates/aws/cloudwatch-log-group) | Managed log retention with optional KMS encryption and deletion protection | `retention_in_days`, `log_group_class`, `deletion_protection_enabled` |
+| AWS | [Route 53 hosted zone](templates/aws/route53-zone) | Public or VPC-private DNS zone with standard and AWS alias records | `private_zone`, `vpc_associations`, `force_destroy` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Storage Account](templates/azure/storage-account) | Entra-first private object storage with versioning, recovery, and network controls | `account_replication_type`, `shared_access_key_enabled`, `public_network_access_enabled` |

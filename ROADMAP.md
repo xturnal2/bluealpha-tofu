@@ -128,6 +128,15 @@ make retention, encryption, and deletion behavior explicit.
 | 26 | [`aws/cloudwatch-log-group`](templates/aws/cloudwatch-log-group) — available | Application log storage with finite retention and guarded deletion | retention, storage class, KMS, deletion protection |
 | 27 | [`azure/log-analytics-workspace`](templates/azure/log-analytics-workspace) — available | Shared telemetry workspace with Entra authorization and spend controls | retention, daily quota, public endpoints, RBAC |
 
+### Group 10: DNS foundations
+
+These stacks establish independently managed public DNS delegation and the
+record interfaces used by application delivery stacks.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 28 | [`aws/route53-zone`](templates/aws/route53-zone) — available | Public or VPC-private hosted zone with common records | zone visibility, VPC associations, aliases, force destroy |
+
 ## Connected architecture examples
 
 Connected examples are larger root configurations that compose published
