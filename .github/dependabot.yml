@@ -71,6 +71,16 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/cloudwatch-log-group
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/aws/route53-zone
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/azure/vnet
     schedule:
       interval: monthly
@@ -127,6 +137,16 @@ updates:
 
   - package-ecosystem: terraform
     directory: /templates/azure/managed-identity
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/log-analytics-workspace
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/dns-zone
     schedule:
       interval: monthly
 

@@ -33,6 +33,8 @@ and release history.
 | AWS | [ECR repository](templates/aws/ecr-repository) | Private container registry with immutable tags, scanning, and image retention | `image_tag_mutability`, `scan_on_push`, `max_image_count` |
 | AWS | [Secrets Manager secret](templates/aws/secrets-manager-secret) | Metadata-only secret boundary with recovery, replicas, and scoped access | `recovery_window_in_days`, `replica_regions`, `allowed_reader_principal_arns` |
 | AWS | [KMS key](templates/aws/kms-key) | Rotating symmetric encryption key with guarded deletion and scoped users | `rotation_period_in_days`, `deletion_window_in_days`, `multi_region` |
+| AWS | [CloudWatch log group](templates/aws/cloudwatch-log-group) | Managed log retention with optional KMS encryption and deletion protection | `retention_in_days`, `log_group_class`, `deletion_protection_enabled` |
+| AWS | [Route 53 hosted zone](templates/aws/route53-zone) | Public or VPC-private DNS zone with standard and AWS alias records | `private_zone`, `vpc_associations`, `force_destroy` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Storage Account](templates/azure/storage-account) | Entra-first private object storage with versioning, recovery, and network controls | `account_replication_type`, `shared_access_key_enabled`, `public_network_access_enabled` |
@@ -45,6 +47,8 @@ and release history.
 | Azure | [Container Registry](templates/azure/container-registry) | Managed container registry with Entra RBAC and Premium network/resilience options | `sku`, `public_network_access_enabled`, `georeplications` |
 | Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
 | Azure | [Managed identity](templates/azure/managed-identity) | User-assigned workload identity with OIDC federation and scoped RBAC | `federated_credentials`, `role_assignments`, `isolation_scope` |
+| Azure | [Log Analytics workspace](templates/azure/log-analytics-workspace) | Entra-first log analytics with bounded ingestion and configurable retention | `daily_quota_gb`, `retention_in_days`, `internet_ingestion_enabled` |
+| Azure | [DNS zone](templates/azure/dns-zone) | Public authoritative DNS with common records, Azure aliases, and scoped RBAC | `a_records`, `cname_records`, `soa_record` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
