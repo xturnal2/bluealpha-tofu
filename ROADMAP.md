@@ -126,6 +126,7 @@ make retention, encryption, and deletion behavior explicit.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 26 | [`aws/cloudwatch-log-group`](templates/aws/cloudwatch-log-group) — available | Application log storage with finite retention and guarded deletion | retention, storage class, KMS, deletion protection |
+| 27 | [`azure/log-analytics-workspace`](templates/azure/log-analytics-workspace) — available | Shared telemetry workspace with Entra authorization and spend controls | retention, daily quota, public endpoints, RBAC |
 
 ## Connected architecture examples
 
