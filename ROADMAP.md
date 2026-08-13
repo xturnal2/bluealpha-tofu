@@ -118,6 +118,15 @@ behavior of the static-site templates.
 | 20 | [`aws/s3-bucket`](templates/aws/s3-bucket) — available | Private encrypted bucket with version recovery and lifecycle hygiene | versioning, KMS, expiration, force destroy |
 | 21 | [`azure/storage-account`](templates/azure/storage-account) — available | Entra-first private object storage with versioning and recovery | redundancy, shared keys, public access, retention |
 
+### Group 9: Observability foundations
+
+These stacks give workloads an independently managed destination for logs and
+make retention, encryption, and deletion behavior explicit.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 26 | [`aws/cloudwatch-log-group`](templates/aws/cloudwatch-log-group) — available | Application log storage with finite retention and guarded deletion | retention, storage class, KMS, deletion protection |
+
 ## Connected architecture examples
 
 Connected examples are larger root configurations that compose published
