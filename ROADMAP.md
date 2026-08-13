@@ -90,6 +90,7 @@ for the application runtimes without coupling consumers to local state.
 | 12 | [`azure/service-bus-queue`](templates/azure/service-bus-queue) — available | Service Bus namespace, queue, and dead-letter behavior | tier, capacity, sessions, TTL |
 | 13 | [`aws/dynamodb-table`](templates/aws/dynamodb-table) — available | DynamoDB table, recovery, TTL, and streams | billing mode, indexes, deletion protection, backups |
 | 16 | [`aws/sns-topic`](templates/aws/sns-topic) — available | Encrypted fan-out topic with filtering and delivery controls | FIFO, subscriptions, KMS, archives |
+| 19 | [`azure/event-grid-topic`](templates/azure/event-grid-topic) — available | Entra-authenticated custom event topic with common destinations | schema, local auth, IP rules, subscriptions |
 
 ### Group 7: Artifact registries and platform security
 
@@ -101,6 +102,17 @@ the existing application runtimes.
 | 14 | [`aws/ecr-repository`](templates/aws/ecr-repository) — available | Private container image repository with scanning and retention | tag mutability, lifecycle limits, KMS, cross-account access |
 | 15 | [`azure/container-registry`](templates/azure/container-registry) — available | Entra-authenticated container registry with optional Premium controls | SKU, public access, network rules, geo-replication |
 | 17 | [`azure/key-vault`](templates/azure/key-vault) — available | RBAC-authorized vault boundary with recovery and network controls | tier, purge protection, public access, role assignments |
+| 18 | [`aws/secrets-manager-secret`](templates/aws/secrets-manager-secret) — available | Metadata-only secret boundary with recovery and regional replicas | KMS, recovery, replicas, access policy |
+
+### Group 8: General-purpose object storage
+
+These stacks provide private application storage without the website-delivery
+behavior of the static-site templates.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 20 | [`aws/s3-bucket`](templates/aws/s3-bucket) — available | Private encrypted bucket with version recovery and lifecycle hygiene | versioning, KMS, expiration, force destroy |
+| 21 | [`azure/storage-account`](templates/azure/storage-account) — available | Entra-first private object storage with versioning and recovery | redundancy, shared keys, public access, retention |
 
 ## Connected architecture examples
 

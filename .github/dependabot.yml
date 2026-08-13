@@ -16,6 +16,11 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/s3-bucket
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/aws/ecs-fargate-service
     schedule:
       interval: monthly
@@ -51,12 +56,22 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/secrets-manager-secret
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/azure/vnet
     schedule:
       interval: monthly
 
   - package-ecosystem: terraform
     directory: /templates/azure/static-website
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/storage-account
     schedule:
       interval: monthly
 
@@ -77,6 +92,11 @@ updates:
 
   - package-ecosystem: terraform
     directory: /templates/azure/service-bus-queue
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/event-grid-topic
     schedule:
       interval: monthly
 

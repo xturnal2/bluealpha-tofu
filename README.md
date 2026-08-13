@@ -22,6 +22,7 @@ and release history.
 |---|---|---|---|
 | AWS | [VPC](templates/aws/vpc) | Multi-AZ VPC with public/private subnets and optional NAT gateways | `enable_nat_gateway`, `single_nat_gateway`, `enable_flow_logs` |
 | AWS | [Static website](templates/aws/static-website) | Private S3 origin delivered through CloudFront with TLS | `enable_access_logging`, `enable_versioning`, `price_class` |
+| AWS | [S3 bucket](templates/aws/s3-bucket) | Private encrypted object storage with versioning and lifecycle controls | `force_destroy`, `versioning_enabled`, `noncurrent_version_expiration_days` |
 | AWS | [ECS Fargate service](templates/aws/ecs-fargate-service) | Container service behind an Application Load Balancer | `desired_count`, `use_fargate_spot`, `enable_autoscaling` |
 | AWS | [RDS PostgreSQL](templates/aws/rds-postgresql) | Private encrypted PostgreSQL with backups and managed credentials | `multi_az`, `deletion_protection`, `backup_retention_days` |
 | AWS | [Lambda HTTP API](templates/aws/lambda-api) | Packaged Lambda behind an HTTP API with logs and throttling | `memory_size`, `reserved_concurrent_executions`, `throttle_rate_limit` |
@@ -29,12 +30,15 @@ and release history.
 | AWS | [SNS topic](templates/aws/sns-topic) | Encrypted pub/sub topic with filters, DLQs, and optional FIFO delivery | `fifo_topic`, `subscriptions`, `archive_policy_days` |
 | AWS | [DynamoDB table](templates/aws/dynamodb-table) | Serverless key-value table with recovery, TTL, streams, and indexes | `billing_mode`, `deletion_protection_enabled`, `point_in_time_recovery_enabled` |
 | AWS | [ECR repository](templates/aws/ecr-repository) | Private container registry with immutable tags, scanning, and image retention | `image_tag_mutability`, `scan_on_push`, `max_image_count` |
+| AWS | [Secrets Manager secret](templates/aws/secrets-manager-secret) | Metadata-only secret boundary with recovery, replicas, and scoped access | `recovery_window_in_days`, `replica_regions`, `allowed_reader_principal_arns` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
+| Azure | [Storage Account](templates/azure/storage-account) | Entra-first private object storage with versioning, recovery, and network controls | `account_replication_type`, `shared_access_key_enabled`, `public_network_access_enabled` |
 | Azure | [Container Apps](templates/azure/container-apps) | Consumption-scaled container app with ingress and logs | `min_replicas`, `max_replicas`, `external_ingress_enabled` |
 | Azure | [PostgreSQL Flexible Server](templates/azure/postgresql-flexible) | Private managed PostgreSQL with DNS and backups | `sku_name`, `high_availability_mode`, `geo_redundant_backup_enabled` |
 | Azure | [Functions HTTP](templates/azure/functions-http) | Linux Function App with storage, monitoring, and HTTP controls | `plan_sku_name`, `maximum_instance_count`, `ip_restrictions` |
 | Azure | [Service Bus queue](templates/azure/service-bus-queue) | Entra-authenticated namespace and queue with DLQ behavior | `sku`, `premium_messaging_units`, `requires_session` |
+| Azure | [Event Grid topic](templates/azure/event-grid-topic) | Entra-authenticated event fan-out with scoped publishers and subscriptions | `local_auth_enabled`, `allowed_ip_cidrs`, `event_subscriptions` |
 | Azure | [Container Registry](templates/azure/container-registry) | Managed container registry with Entra RBAC and Premium network/resilience options | `sku`, `public_network_access_enabled`, `georeplications` |
 | Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
 
