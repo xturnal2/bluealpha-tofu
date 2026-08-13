@@ -136,6 +136,7 @@ record interfaces used by application delivery stacks.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 28 | [`aws/route53-zone`](templates/aws/route53-zone) — available | Public or VPC-private hosted zone with common records | zone visibility, VPC associations, aliases, force destroy |
+| 29 | [`azure/dns-zone`](templates/azure/dns-zone) — available | Public authoritative zone with common records and scoped automation | records, Azure aliases, SOA timings, RBAC |
 
 ## Connected architecture examples
 

@@ -48,6 +48,7 @@ and release history.
 | Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
 | Azure | [Managed identity](templates/azure/managed-identity) | User-assigned workload identity with OIDC federation and scoped RBAC | `federated_credentials`, `role_assignments`, `isolation_scope` |
 | Azure | [Log Analytics workspace](templates/azure/log-analytics-workspace) | Entra-first log analytics with bounded ingestion and configurable retention | `daily_quota_gb`, `retention_in_days`, `internet_ingestion_enabled` |
+| Azure | [DNS zone](templates/azure/dns-zone) | Public authoritative DNS with common records, Azure aliases, and scoped RBAC | `a_records`, `cname_records`, `soa_record` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
