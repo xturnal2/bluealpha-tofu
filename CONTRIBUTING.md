@@ -19,8 +19,8 @@ tofu fmt -recursive -check
 ./scripts/validate.ps1
 ```
 
-Validation initializes each template without a backend and does not create
-cloud resources.
+Validation initializes each template and connected example without a backend and
+does not create cloud resources.
 
 ## New-template checklist
 
@@ -39,6 +39,15 @@ Place a template at `templates/<cloud>/<stack>/` and include:
 New flags should have a safe, unsurprising default. A flag that enables public
 access or a material recurring charge must default to `false` and be called out
 in the cost or security section.
+
+## Connected-example checklist
+
+Place a composition at `examples/<cloud>/<architecture>/`. Reuse published
+templates through relative module sources, pass outputs directly into inputs,
+and document application contracts, IAM, network flows, cost, operations, and
+the protected destroy sequence. Include `versions.tf`, `main.tf`, `variables.tf`,
+`outputs.tf`, `example.tfvars`, a provider lock file, and a README. Avoid remote
+state dependencies and copied resource IDs.
 
 ## Pull requests
 

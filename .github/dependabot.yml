@@ -129,3 +129,8 @@ updates:
     directory: /templates/azure/managed-identity
     schedule:
       interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /examples/aws/connected-app-platform
+    schedule:
+      interval: monthly

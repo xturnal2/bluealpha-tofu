@@ -49,6 +49,16 @@ and release history.
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
 
+## Connected architecture examples
+
+| Cloud | Example | Composed stacks |
+|---|---|---|
+| AWS | [Connected application platform](examples/aws/connected-app-platform) | VPC, ECS Fargate, RDS PostgreSQL, SQS/DLQ, and DynamoDB |
+
+Examples demonstrate output-to-input composition, cross-stack IAM, network
+boundaries, and operational tradeoffs. They create multiple chargeable services;
+review their READMEs and plans before applying.
+
 ## Quick start
 
 Prerequisites:
