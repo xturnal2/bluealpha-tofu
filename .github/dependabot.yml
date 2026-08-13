@@ -36,7 +36,17 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/sns-topic
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/aws/dynamodb-table
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/aws/ecr-repository
     schedule:
       interval: monthly
 
@@ -67,6 +77,16 @@ updates:
 
   - package-ecosystem: terraform
     directory: /templates/azure/service-bus-queue
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/container-registry
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/key-vault
     schedule:
       interval: monthly
 

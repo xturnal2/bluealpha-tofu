@@ -89,6 +89,18 @@ for the application runtimes without coupling consumers to local state.
 | 11 | [`aws/sqs-queue`](templates/aws/sqs-queue) — available | Encrypted queue and restricted dead-letter queue | FIFO, retention, visibility timeout, KMS |
 | 12 | [`azure/service-bus-queue`](templates/azure/service-bus-queue) — available | Service Bus namespace, queue, and dead-letter behavior | tier, capacity, sessions, TTL |
 | 13 | [`aws/dynamodb-table`](templates/aws/dynamodb-table) — available | DynamoDB table, recovery, TTL, and streams | billing mode, indexes, deletion protection, backups |
+| 16 | [`aws/sns-topic`](templates/aws/sns-topic) — available | Encrypted fan-out topic with filtering and delivery controls | FIFO, subscriptions, KMS, archives |
+
+### Group 7: Artifact registries and platform security
+
+These stacks provide image distribution and secret-management foundations for
+the existing application runtimes.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 14 | [`aws/ecr-repository`](templates/aws/ecr-repository) — available | Private container image repository with scanning and retention | tag mutability, lifecycle limits, KMS, cross-account access |
+| 15 | [`azure/container-registry`](templates/azure/container-registry) — available | Entra-authenticated container registry with optional Premium controls | SKU, public access, network rules, geo-replication |
+| 17 | [`azure/key-vault`](templates/azure/key-vault) — available | RBAC-authorized vault boundary with recovery and network controls | tier, purge protection, public access, role assignments |
 
 ## Connected architecture examples
 

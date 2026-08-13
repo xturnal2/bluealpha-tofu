@@ -26,13 +26,17 @@ and release history.
 | AWS | [RDS PostgreSQL](templates/aws/rds-postgresql) | Private encrypted PostgreSQL with backups and managed credentials | `multi_az`, `deletion_protection`, `backup_retention_days` |
 | AWS | [Lambda HTTP API](templates/aws/lambda-api) | Packaged Lambda behind an HTTP API with logs and throttling | `memory_size`, `reserved_concurrent_executions`, `throttle_rate_limit` |
 | AWS | [SQS queue](templates/aws/sqs-queue) | Encrypted queue with optional FIFO behavior and a restricted DLQ | `create_dead_letter_queue`, `fifo_queue`, `kms_master_key_id` |
+| AWS | [SNS topic](templates/aws/sns-topic) | Encrypted pub/sub topic with filters, DLQs, and optional FIFO delivery | `fifo_topic`, `subscriptions`, `archive_policy_days` |
 | AWS | [DynamoDB table](templates/aws/dynamodb-table) | Serverless key-value table with recovery, TTL, streams, and indexes | `billing_mode`, `deletion_protection_enabled`, `point_in_time_recovery_enabled` |
+| AWS | [ECR repository](templates/aws/ecr-repository) | Private container registry with immutable tags, scanning, and image retention | `image_tag_mutability`, `scan_on_push`, `max_image_count` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Container Apps](templates/azure/container-apps) | Consumption-scaled container app with ingress and logs | `min_replicas`, `max_replicas`, `external_ingress_enabled` |
 | Azure | [PostgreSQL Flexible Server](templates/azure/postgresql-flexible) | Private managed PostgreSQL with DNS and backups | `sku_name`, `high_availability_mode`, `geo_redundant_backup_enabled` |
 | Azure | [Functions HTTP](templates/azure/functions-http) | Linux Function App with storage, monitoring, and HTTP controls | `plan_sku_name`, `maximum_instance_count`, `ip_restrictions` |
 | Azure | [Service Bus queue](templates/azure/service-bus-queue) | Entra-authenticated namespace and queue with DLQ behavior | `sku`, `premium_messaging_units`, `requires_session` |
+| Azure | [Container Registry](templates/azure/container-registry) | Managed container registry with Entra RBAC and Premium network/resilience options | `sku`, `public_network_access_enabled`, `georeplications` |
+| Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
