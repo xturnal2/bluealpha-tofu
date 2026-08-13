@@ -114,9 +114,19 @@ behavior of the static-site templates.
 | 20 | [`aws/s3-bucket`](templates/aws/s3-bucket) — available | Private encrypted bucket with version recovery and lifecycle hygiene | versioning, KMS, expiration, force destroy |
 | 21 | [`azure/storage-account`](templates/azure/storage-account) — available | Entra-first private object storage with versioning and recovery | redundancy, shared keys, public access, retention |
 
+## Connected architecture examples
+
+Connected examples are larger root configurations that compose published
+templates and document the seams between networking, identity, runtime, and
+data services.
+
+| Order | Example | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 1 | [`aws/connected-app-platform`](examples/aws/connected-app-platform) — available | VPC, ECS, PostgreSQL, SQS, and DynamoDB | NAT topology, ingress, app scaling, database resilience/protection |
+
 ## Stack definition of done
 
-Every stack change must include:
+Every stack or connected-example change must include:
 
 - bounded OpenTofu and provider version constraints;
 - safe defaults, standard tags, variable validation, and useful outputs;

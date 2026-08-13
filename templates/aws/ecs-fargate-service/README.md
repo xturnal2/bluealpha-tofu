@@ -47,6 +47,8 @@ CloudWatch Logs, Secrets Manager/SSM, and ECS control-plane traffic. Do not set
 | `enable_autoscaling` | `true` | Adjusts desired count based on CPU |
 | `enable_container_insights` | `false` | Adds detailed telemetry and CloudWatch charges |
 | `enable_execute_command` | `false` | Enables interactive ECS Exec and task-role SSM permissions |
+| `additional_task_security_group_ids` | `[]` | Adds shared security-group identities for downstream services |
+| `task_role_policy_statements` | `[]` | Adds explicit application actions and resource ARNs to the task role |
 
 ## Secrets and application permissions
 
@@ -55,8 +57,11 @@ ARNs. The execution role receives read access only to those ARNs. Customer-manag
 KMS keys require a separate `kms:Decrypt` grant. Non-sensitive settings belong in
 `environment_variables`.
 
-The task role intentionally has no application permissions. Attach narrowly
-scoped policies after reviewing what the container actually needs.
+The task role has no application permissions unless
+`task_role_policy_statements` is populated. Each entry creates an Allow statement
+with explicit actions and resources; wildcard access should be exceptional and
+reviewed. The connected application-platform example demonstrates queue and
+table permissions.
 
 ## Inputs
 
@@ -65,8 +70,10 @@ Core inputs are `project_name`, `vpc_id`, `load_balancer_subnet_ids`,
 `memory`, `cpu_architecture`, `container_port`, `desired_count`,
 `ephemeral_storage_gib`, and the autoscaling variables. Network/TLS controls are
 `internal_load_balancer`, the allowed ingress collections, `assign_public_ip`,
-`certificate_arn`, and `redirect_http_to_https`. See `variables.tf` for exact
-types, defaults, validation, and descriptions.
+`certificate_arn`, `redirect_http_to_https`, and
+`additional_task_security_group_ids`. Application authorization is configured
+through `task_role_policy_statements`. See `variables.tf` for exact types,
+defaults, validation, and descriptions.
 
 ## Outputs
 
