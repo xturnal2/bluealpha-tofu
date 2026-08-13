@@ -46,6 +46,12 @@ variable "task_subnet_ids" {
   }
 }
 
+variable "additional_task_security_group_ids" {
+  description = "Additional security groups attached to task ENIs for shared downstream access policies."
+  type        = set(string)
+  default     = []
+}
+
 variable "container_image" {
   description = "Container image URI, ideally pinned to an immutable digest or version tag."
   type        = string
@@ -163,6 +169,23 @@ variable "secrets" {
   description = "Map of container variable names to Secrets Manager secret ARNs or SSM parameter ARNs."
   type        = map(string)
   default     = {}
+}
+
+variable "task_role_policy_statements" {
+  description = "Additional least-privilege Allow statements attached to the application task role."
+  type = list(object({
+    sid       = optional(string, null)
+    actions   = set(string)
+    resources = set(string)
+  }))
+  default = []
+  validation {
+    condition = alltrue([
+      for statement in var.task_role_policy_statements :
+      length(statement.actions) > 0 && length(statement.resources) > 0
+    ])
+    error_message = "Every task role policy statement must include at least one action and resource."
+  }
 }
 
 variable "log_retention_days" {

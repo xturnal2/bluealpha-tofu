@@ -90,9 +90,19 @@ for the application runtimes without coupling consumers to local state.
 | 12 | [`azure/service-bus-queue`](templates/azure/service-bus-queue) — available | Service Bus namespace, queue, and dead-letter behavior | tier, capacity, sessions, TTL |
 | 13 | [`aws/dynamodb-table`](templates/aws/dynamodb-table) — available | DynamoDB table, recovery, TTL, and streams | billing mode, indexes, deletion protection, backups |
 
+## Connected architecture examples
+
+Connected examples are larger root configurations that compose published
+templates and document the seams between networking, identity, runtime, and
+data services.
+
+| Order | Example | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 1 | [`aws/connected-app-platform`](examples/aws/connected-app-platform) — available | VPC, ECS, PostgreSQL, SQS, and DynamoDB | NAT topology, ingress, app scaling, database resilience/protection |
+
 ## Stack definition of done
 
-Every stack change must include:
+Every stack or connected-example change must include:
 
 - bounded OpenTofu and provider version constraints;
 - safe defaults, standard tags, variable validation, and useful outputs;

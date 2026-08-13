@@ -112,6 +112,28 @@ resource "aws_iam_role_policy" "ecs_exec" {
   policy = data.aws_iam_policy_document.ecs_exec[0].json
 }
 
+data "aws_iam_policy_document" "task" {
+  count = length(var.task_role_policy_statements) > 0 ? 1 : 0
+
+  dynamic "statement" {
+    for_each = var.task_role_policy_statements
+    content {
+      sid       = statement.value.sid
+      effect    = "Allow"
+      actions   = statement.value.actions
+      resources = statement.value.resources
+    }
+  }
+}
+
+resource "aws_iam_role_policy" "task" {
+  count = length(var.task_role_policy_statements) > 0 ? 1 : 0
+
+  name   = "application-access"
+  role   = aws_iam_role.task.id
+  policy = data.aws_iam_policy_document.task[0].json
+}
+
 resource "aws_security_group" "load_balancer" {
   name_prefix = "${local.name_prefix}-alb-"
   description = "Ingress to ${local.name_prefix} load balancer"
@@ -325,6 +347,8 @@ resource "aws_ecs_task_definition" "service" {
       error_message = "memory is not compatible with the selected Fargate cpu value."
     }
   }
+
+  depends_on = [aws_iam_role_policy.task]
 }
 
 resource "aws_ecs_service" "this" {
@@ -351,7 +375,7 @@ resource "aws_ecs_service" "this" {
 
   network_configuration {
     subnets          = var.task_subnet_ids
-    security_groups  = [aws_security_group.tasks.id]
+    security_groups  = concat([aws_security_group.tasks.id], sort(tolist(var.additional_task_security_group_ids)))
     assign_public_ip = var.assign_public_ip
   }
 
