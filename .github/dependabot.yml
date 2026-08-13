@@ -46,6 +46,11 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/eventbridge-bus
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/aws/dynamodb-table
     schedule:
       interval: monthly
@@ -57,6 +62,11 @@ updates:
 
   - package-ecosystem: terraform
     directory: /templates/aws/secrets-manager-secret
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/aws/kms-key
     schedule:
       interval: monthly
 
@@ -101,12 +111,22 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/azure/event-hubs
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/azure/container-registry
     schedule:
       interval: monthly
 
   - package-ecosystem: terraform
     directory: /templates/azure/key-vault
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/managed-identity
     schedule:
       interval: monthly
 

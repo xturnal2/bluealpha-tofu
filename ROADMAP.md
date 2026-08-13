@@ -91,6 +91,8 @@ for the application runtimes without coupling consumers to local state.
 | 13 | [`aws/dynamodb-table`](templates/aws/dynamodb-table) — available | DynamoDB table, recovery, TTL, and streams | billing mode, indexes, deletion protection, backups |
 | 16 | [`aws/sns-topic`](templates/aws/sns-topic) — available | Encrypted fan-out topic with filtering and delivery controls | FIFO, subscriptions, KMS, archives |
 | 19 | [`azure/event-grid-topic`](templates/azure/event-grid-topic) — available | Entra-authenticated custom event topic with common destinations | schema, local auth, IP rules, subscriptions |
+| 22 | [`aws/eventbridge-bus`](templates/aws/eventbridge-bus) — available | Custom event bus with scoped publishers and replay archive | KMS, archive retention, cross-account publishing |
+| 23 | [`azure/event-hubs`](templates/azure/event-hubs) — available | Entra-authenticated partitioned event stream with consumer groups | tier, capacity, partitions, retention, network rules |
 
 ### Group 7: Artifact registries and platform security
 
@@ -102,7 +104,9 @@ the existing application runtimes.
 | 14 | [`aws/ecr-repository`](templates/aws/ecr-repository) — available | Private container image repository with scanning and retention | tag mutability, lifecycle limits, KMS, cross-account access |
 | 15 | [`azure/container-registry`](templates/azure/container-registry) — available | Entra-authenticated container registry with optional Premium controls | SKU, public access, network rules, geo-replication |
 | 17 | [`azure/key-vault`](templates/azure/key-vault) — available | RBAC-authorized vault boundary with recovery and network controls | tier, purge protection, public access, role assignments |
+| 25 | [`azure/managed-identity`](templates/azure/managed-identity) — available | User-assigned workload identity with OIDC federation | federation subjects, RBAC scopes, regional isolation |
 | 18 | [`aws/secrets-manager-secret`](templates/aws/secrets-manager-secret) — available | Metadata-only secret boundary with recovery and regional replicas | KMS, recovery, replicas, access policy |
+| 24 | [`aws/kms-key`](templates/aws/kms-key) — available | Rotating symmetric encryption key and alias | rotation, deletion window, multi-Region, key users |
 
 ### Group 8: General-purpose object storage
 

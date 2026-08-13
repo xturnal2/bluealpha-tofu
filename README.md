@@ -28,9 +28,11 @@ and release history.
 | AWS | [Lambda HTTP API](templates/aws/lambda-api) | Packaged Lambda behind an HTTP API with logs and throttling | `memory_size`, `reserved_concurrent_executions`, `throttle_rate_limit` |
 | AWS | [SQS queue](templates/aws/sqs-queue) | Encrypted queue with optional FIFO behavior and a restricted DLQ | `create_dead_letter_queue`, `fifo_queue`, `kms_master_key_id` |
 | AWS | [SNS topic](templates/aws/sns-topic) | Encrypted pub/sub topic with filters, DLQs, and optional FIFO delivery | `fifo_topic`, `subscriptions`, `archive_policy_days` |
+| AWS | [EventBridge bus](templates/aws/eventbridge-bus) | Custom event bus with scoped publishers and optional replay archive | `kms_key_identifier`, `enable_archive`, `allowed_put_events_principal_arns` |
 | AWS | [DynamoDB table](templates/aws/dynamodb-table) | Serverless key-value table with recovery, TTL, streams, and indexes | `billing_mode`, `deletion_protection_enabled`, `point_in_time_recovery_enabled` |
 | AWS | [ECR repository](templates/aws/ecr-repository) | Private container registry with immutable tags, scanning, and image retention | `image_tag_mutability`, `scan_on_push`, `max_image_count` |
 | AWS | [Secrets Manager secret](templates/aws/secrets-manager-secret) | Metadata-only secret boundary with recovery, replicas, and scoped access | `recovery_window_in_days`, `replica_regions`, `allowed_reader_principal_arns` |
+| AWS | [KMS key](templates/aws/kms-key) | Rotating symmetric encryption key with guarded deletion and scoped users | `rotation_period_in_days`, `deletion_window_in_days`, `multi_region` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Storage Account](templates/azure/storage-account) | Entra-first private object storage with versioning, recovery, and network controls | `account_replication_type`, `shared_access_key_enabled`, `public_network_access_enabled` |
@@ -39,8 +41,10 @@ and release history.
 | Azure | [Functions HTTP](templates/azure/functions-http) | Linux Function App with storage, monitoring, and HTTP controls | `plan_sku_name`, `maximum_instance_count`, `ip_restrictions` |
 | Azure | [Service Bus queue](templates/azure/service-bus-queue) | Entra-authenticated namespace and queue with DLQ behavior | `sku`, `premium_messaging_units`, `requires_session` |
 | Azure | [Event Grid topic](templates/azure/event-grid-topic) | Entra-authenticated event fan-out with scoped publishers and subscriptions | `local_auth_enabled`, `allowed_ip_cidrs`, `event_subscriptions` |
+| Azure | [Event Hubs](templates/azure/event-hubs) | Entra-authenticated event stream with partitions, retention, and consumer groups | `sku`, `partition_count`, `auto_inflate_enabled` |
 | Azure | [Container Registry](templates/azure/container-registry) | Managed container registry with Entra RBAC and Premium network/resilience options | `sku`, `public_network_access_enabled`, `georeplications` |
 | Azure | [Key Vault](templates/azure/key-vault) | RBAC-authorized secret boundary with recovery and network controls | `purge_protection_enabled`, `public_network_access_enabled`, `role_assignments` |
+| Azure | [Managed identity](templates/azure/managed-identity) | User-assigned workload identity with OIDC federation and scoped RBAC | `federated_credentials`, `role_assignments`, `isolation_scope` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
