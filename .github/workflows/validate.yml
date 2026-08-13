@@ -1,4 +1,4 @@
-name: Validate templates
+name: Validate OpenTofu configurations
 
 on:
   pull_request:
@@ -26,5 +26,5 @@ jobs:
       - uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: "1.12.2"
-      - name: Validate all published templates
+      - name: Validate all published templates and examples
         run: ./scripts/validate.sh

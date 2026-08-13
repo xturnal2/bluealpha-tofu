@@ -8,4 +8,4 @@ while IFS= read -r versions_file; do
   echo "Validating ${template_dir#"$repo_root/"}"
   tofu -chdir="$template_dir" init -backend=false -input=false
   tofu -chdir="$template_dir" validate
-done < <(find "$repo_root/templates" -name versions.tf -type f | sort)
+done < <(find "$repo_root/templates" "$repo_root/examples" -name versions.tf -type f | sort)

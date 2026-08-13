@@ -1,13 +1,16 @@
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
-$templates = Get-ChildItem -Path (Join-Path $repoRoot "templates") -Directory -Recurse |
+$configurationRoots = @("templates", "examples") |
+    ForEach-Object { Join-Path $repoRoot $_ } |
+    Where-Object { Test-Path $_ }
+$configurations = Get-ChildItem -Path $configurationRoots -Directory -Recurse |
     Where-Object { Test-Path (Join-Path $_.FullName "versions.tf") }
 
-foreach ($template in $templates) {
-    $relativePath = [System.IO.Path]::GetRelativePath($repoRoot, $template.FullName)
+foreach ($configuration in $configurations) {
+    $relativePath = [System.IO.Path]::GetRelativePath($repoRoot, $configuration.FullName)
     Write-Host "Validating $relativePath"
-    Push-Location $template.FullName
+    Push-Location $configuration.FullName
     try {
         tofu init -backend=false -input=false | Out-Host
         if ($LASTEXITCODE -ne 0) { throw "tofu init failed for $relativePath" }
@@ -19,4 +22,4 @@ foreach ($template in $templates) {
     }
 }
 
-Write-Host "Validated $($templates.Count) templates."
+Write-Host "Validated $($configurations.Count) templates and examples."
