@@ -81,6 +81,16 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/iam-role
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/aws/account-budget
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/azure/vnet
     schedule:
       interval: monthly
@@ -147,6 +157,16 @@ updates:
 
   - package-ecosystem: terraform
     directory: /templates/azure/dns-zone
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/custom-role
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/subscription-budget
     schedule:
       interval: monthly
 

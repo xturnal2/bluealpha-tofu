@@ -35,6 +35,8 @@ and release history.
 | AWS | [KMS key](templates/aws/kms-key) | Rotating symmetric encryption key with guarded deletion and scoped users | `rotation_period_in_days`, `deletion_window_in_days`, `multi_region` |
 | AWS | [CloudWatch log group](templates/aws/cloudwatch-log-group) | Managed log retention with optional KMS encryption and deletion protection | `retention_in_days`, `log_group_class`, `deletion_protection_enabled` |
 | AWS | [Route 53 hosted zone](templates/aws/route53-zone) | Public or VPC-private DNS zone with standard and AWS alias records | `private_zone`, `vpc_associations`, `force_destroy` |
+| AWS | [IAM role](templates/aws/iam-role) | Explicit workload or cross-account trust with bounded permissions | `trusted_service_principals`, `permissions_boundary_arn`, `managed_policy_arns` |
+| AWS | [Account budget](templates/aws/account-budget) | Recurring cost guardrail with scoped actual and forecast notifications | `limit_amount`, `cost_filters`, `notifications` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Storage Account](templates/azure/storage-account) | Entra-first private object storage with versioning, recovery, and network controls | `account_replication_type`, `shared_access_key_enabled`, `public_network_access_enabled` |
@@ -49,6 +51,8 @@ and release history.
 | Azure | [Managed identity](templates/azure/managed-identity) | User-assigned workload identity with OIDC federation and scoped RBAC | `federated_credentials`, `role_assignments`, `isolation_scope` |
 | Azure | [Log Analytics workspace](templates/azure/log-analytics-workspace) | Entra-first log analytics with bounded ingestion and configurable retention | `daily_quota_gb`, `retention_in_days`, `internet_ingestion_enabled` |
 | Azure | [DNS zone](templates/azure/dns-zone) | Public authoritative DNS with common records, Azure aliases, and scoped RBAC | `a_records`, `cname_records`, `soa_record` |
+| Azure | [Custom RBAC role](templates/azure/custom-role) | Least-privilege management or data actions with bounded assignable scopes | `actions`, `data_actions`, `assignable_scopes` |
+| Azure | [Subscription budget](templates/azure/subscription-budget) | Filterable cost guardrail with actual and forecast notifications | `amount`, `tag_filters`, `notifications` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.

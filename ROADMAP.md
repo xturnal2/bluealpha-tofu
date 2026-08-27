@@ -138,6 +138,18 @@ record interfaces used by application delivery stacks.
 | 28 | [`aws/route53-zone`](templates/aws/route53-zone) — available | Public or VPC-private hosted zone with common records | zone visibility, VPC associations, aliases, force destroy |
 | 29 | [`azure/dns-zone`](templates/azure/dns-zone) — available | Public authoritative zone with common records and scoped automation | records, Azure aliases, SOA timings, RBAC |
 
+### Group 11: Identity and cost governance
+
+These stacks establish reusable authorization boundaries and proactive cloud
+spend notifications independently from individual workloads.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 30 | [`aws/iam-role`](templates/aws/iam-role) — available | Workload or cross-account role with explicit trust and permissions | trust principals, external ID, boundary, policy attachments |
+| 31 | [`azure/custom-role`](templates/azure/custom-role) — available | Least-privilege custom RBAC definition and optional assignments | actions, data actions, assignable scopes, principals |
+| 32 | [`aws/account-budget`](templates/aws/account-budget) — available | Account or filtered cost budget with proactive notifications | amount, period, filters, charge types, subscribers |
+| 33 | [`azure/subscription-budget`](templates/azure/subscription-budget) — available | Subscription cost budget with filters and routed notifications | amount, period, filters, emails, action groups |
+
 ## Connected architecture examples
 
 Connected examples are larger root configurations that compose published
