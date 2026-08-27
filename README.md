@@ -36,6 +36,7 @@ and release history.
 | AWS | [CloudWatch log group](templates/aws/cloudwatch-log-group) | Managed log retention with optional KMS encryption and deletion protection | `retention_in_days`, `log_group_class`, `deletion_protection_enabled` |
 | AWS | [Route 53 hosted zone](templates/aws/route53-zone) | Public or VPC-private DNS zone with standard and AWS alias records | `private_zone`, `vpc_associations`, `force_destroy` |
 | AWS | [IAM role](templates/aws/iam-role) | Explicit workload or cross-account trust with bounded permissions | `trusted_service_principals`, `permissions_boundary_arn`, `managed_policy_arns` |
+| AWS | [Account budget](templates/aws/account-budget) | Recurring cost guardrail with scoped actual and forecast notifications | `limit_amount`, `cost_filters`, `notifications` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Storage Account](templates/azure/storage-account) | Entra-first private object storage with versioning, recovery, and network controls | `account_replication_type`, `shared_access_key_enabled`, `public_network_access_enabled` |

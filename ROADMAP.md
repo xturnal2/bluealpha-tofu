@@ -147,6 +147,7 @@ spend notifications independently from individual workloads.
 |---:|---|---|---|
 | 30 | [`aws/iam-role`](templates/aws/iam-role) — available | Workload or cross-account role with explicit trust and permissions | trust principals, external ID, boundary, policy attachments |
 | 31 | [`azure/custom-role`](templates/azure/custom-role) — available | Least-privilege custom RBAC definition and optional assignments | actions, data actions, assignable scopes, principals |
+| 32 | [`aws/account-budget`](templates/aws/account-budget) — available | Account or filtered cost budget with proactive notifications | amount, period, filters, charge types, subscribers |
 
 ## Connected architecture examples
 
