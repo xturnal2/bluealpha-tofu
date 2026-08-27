@@ -146,6 +146,7 @@ spend notifications independently from individual workloads.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 30 | [`aws/iam-role`](templates/aws/iam-role) — available | Workload or cross-account role with explicit trust and permissions | trust principals, external ID, boundary, policy attachments |
+| 31 | [`azure/custom-role`](templates/azure/custom-role) — available | Least-privilege custom RBAC definition and optional assignments | actions, data actions, assignable scopes, principals |
 
 ## Connected architecture examples
 

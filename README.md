@@ -50,6 +50,7 @@ and release history.
 | Azure | [Managed identity](templates/azure/managed-identity) | User-assigned workload identity with OIDC federation and scoped RBAC | `federated_credentials`, `role_assignments`, `isolation_scope` |
 | Azure | [Log Analytics workspace](templates/azure/log-analytics-workspace) | Entra-first log analytics with bounded ingestion and configurable retention | `daily_quota_gb`, `retention_in_days`, `internet_ingestion_enabled` |
 | Azure | [DNS zone](templates/azure/dns-zone) | Public authoritative DNS with common records, Azure aliases, and scoped RBAC | `a_records`, `cname_records`, `soa_record` |
+| Azure | [Custom RBAC role](templates/azure/custom-role) | Least-privilege management or data actions with bounded assignable scopes | `actions`, `data_actions`, `assignable_scopes` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
