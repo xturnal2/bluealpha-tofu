@@ -91,6 +91,11 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/cloudwatch-metric-alarm
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/azure/vnet
     schedule:
       interval: monthly
