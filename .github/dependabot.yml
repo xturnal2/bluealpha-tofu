@@ -91,6 +91,16 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/aws/cloudwatch-metric-alarm
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/aws/cloudwatch-dashboard
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /templates/azure/vnet
     schedule:
       interval: monthly
@@ -167,6 +177,16 @@ updates:
 
   - package-ecosystem: terraform
     directory: /templates/azure/subscription-budget
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/monitor-action-group
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
+    directory: /templates/azure/monitor-metric-alert
     schedule:
       interval: monthly
 

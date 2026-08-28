@@ -150,6 +150,18 @@ spend notifications independently from individual workloads.
 | 32 | [`aws/account-budget`](templates/aws/account-budget) — available | Account or filtered cost budget with proactive notifications | amount, period, filters, charge types, subscribers |
 | 33 | [`azure/subscription-budget`](templates/azure/subscription-budget) — available | Subscription cost budget with filters and routed notifications | amount, period, filters, emails, action groups |
 
+### Group 12: Monitoring and alerting
+
+These stacks separate shared notification routing, metric detection, and
+operational visualization from application resource lifecycles.
+
+| Order | Stack | Initial scope | High-impact choices to expose |
+|---:|---|---|---|
+| 34 | [`aws/cloudwatch-metric-alarm`](templates/aws/cloudwatch-metric-alarm) — available | Static metric threshold with M-of-N evaluation and actions | threshold, periods, missing data, destinations |
+| 35 | [`azure/monitor-action-group`](templates/azure/monitor-action-group) — available | Shared alert routing to email and authenticated webhooks | enabled state, receivers, common schema, Entra auth |
+| 36 | [`aws/cloudwatch-dashboard`](templates/aws/cloudwatch-dashboard) — available | Generated operational view with metric and runbook widgets | metrics, dimensions, periods, annotations, layout |
+| 37 | [`azure/monitor-metric-alert`](templates/azure/monitor-metric-alert) — available | Static metric threshold with dimensions and shared actions | criteria, severity, frequency, action groups |
+
 ## Connected architecture examples
 
 Connected examples are larger root configurations that compose published

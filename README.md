@@ -37,6 +37,8 @@ and release history.
 | AWS | [Route 53 hosted zone](templates/aws/route53-zone) | Public or VPC-private DNS zone with standard and AWS alias records | `private_zone`, `vpc_associations`, `force_destroy` |
 | AWS | [IAM role](templates/aws/iam-role) | Explicit workload or cross-account trust with bounded permissions | `trusted_service_principals`, `permissions_boundary_arn`, `managed_policy_arns` |
 | AWS | [Account budget](templates/aws/account-budget) | Recurring cost guardrail with scoped actual and forecast notifications | `limit_amount`, `cost_filters`, `notifications` |
+| AWS | [CloudWatch metric alarm](templates/aws/cloudwatch-metric-alarm) | M-of-N static metric threshold with explicit state actions | `threshold`, `datapoints_to_alarm`, `treat_missing_data` |
+| AWS | [CloudWatch dashboard](templates/aws/cloudwatch-dashboard) | Typed metric and Markdown widgets with generated dashboard JSON | `metric_widgets`, `text_widgets`, `default_time_range` |
 | Azure | [Virtual network](templates/azure/vnet) | VNet with configurable subnets, NSGs, delegations, and optional NAT Gateway | `enable_nat_gateway`, `create_network_security_groups` |
 | Azure | [Static website](templates/azure/static-website) | Storage static website with optional Front Door delivery | `enable_cdn`, `enable_versioning`, `account_replication_type` |
 | Azure | [Storage Account](templates/azure/storage-account) | Entra-first private object storage with versioning, recovery, and network controls | `account_replication_type`, `shared_access_key_enabled`, `public_network_access_enabled` |
@@ -53,6 +55,8 @@ and release history.
 | Azure | [DNS zone](templates/azure/dns-zone) | Public authoritative DNS with common records, Azure aliases, and scoped RBAC | `a_records`, `cname_records`, `soa_record` |
 | Azure | [Custom RBAC role](templates/azure/custom-role) | Least-privilege management or data actions with bounded assignable scopes | `actions`, `data_actions`, `assignable_scopes` |
 | Azure | [Subscription budget](templates/azure/subscription-budget) | Filterable cost guardrail with actual and forecast notifications | `amount`, `tag_filters`, `notifications` |
+| Azure | [Monitor action group](templates/azure/monitor-action-group) | Shared email and HTTPS webhook routing for Azure Monitor alerts | `enabled`, `email_receivers`, `webhook_receivers` |
+| Azure | [Monitor metric alert](templates/azure/monitor-metric-alert) | Static metric criteria with severity, dimensions, and action-group routing | `criteria`, `frequency`, `action_groups` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
