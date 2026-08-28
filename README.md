@@ -56,6 +56,7 @@ and release history.
 | Azure | [Custom RBAC role](templates/azure/custom-role) | Least-privilege management or data actions with bounded assignable scopes | `actions`, `data_actions`, `assignable_scopes` |
 | Azure | [Subscription budget](templates/azure/subscription-budget) | Filterable cost guardrail with actual and forecast notifications | `amount`, `tag_filters`, `notifications` |
 | Azure | [Monitor action group](templates/azure/monitor-action-group) | Shared email and HTTPS webhook routing for Azure Monitor alerts | `enabled`, `email_receivers`, `webhook_receivers` |
+| Azure | [Monitor metric alert](templates/azure/monitor-metric-alert) | Static metric criteria with severity, dimensions, and action-group routing | `criteria`, `frequency`, `action_groups` |
 
 See the [roadmap](ROADMAP.md) for the planned AWS and Azure stacks and their
 proposed delivery order.
