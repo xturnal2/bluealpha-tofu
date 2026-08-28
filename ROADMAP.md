@@ -158,6 +158,7 @@ operational visualization from application resource lifecycles.
 | Order | Stack | Initial scope | High-impact choices to expose |
 |---:|---|---|---|
 | 34 | [`aws/cloudwatch-metric-alarm`](templates/aws/cloudwatch-metric-alarm) — available | Static metric threshold with M-of-N evaluation and actions | threshold, periods, missing data, destinations |
+| 35 | [`azure/monitor-action-group`](templates/azure/monitor-action-group) — available | Shared alert routing to email and authenticated webhooks | enabled state, receivers, common schema, Entra auth |
 
 ## Connected architecture examples
 

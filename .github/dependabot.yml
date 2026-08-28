@@ -176,6 +176,11 @@ updates:
       interval: monthly
 
   - package-ecosystem: terraform
+    directory: /templates/azure/monitor-action-group
+    schedule:
+      interval: monthly
+
+  - package-ecosystem: terraform
     directory: /examples/aws/connected-app-platform
     schedule:
       interval: monthly
