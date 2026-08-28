@@ -159,6 +159,7 @@ operational visualization from application resource lifecycles.
 |---:|---|---|---|
 | 34 | [`aws/cloudwatch-metric-alarm`](templates/aws/cloudwatch-metric-alarm) — available | Static metric threshold with M-of-N evaluation and actions | threshold, periods, missing data, destinations |
 | 35 | [`azure/monitor-action-group`](templates/azure/monitor-action-group) — available | Shared alert routing to email and authenticated webhooks | enabled state, receivers, common schema, Entra auth |
+| 36 | [`aws/cloudwatch-dashboard`](templates/aws/cloudwatch-dashboard) — available | Generated operational view with metric and runbook widgets | metrics, dimensions, periods, annotations, layout |
 
 ## Connected architecture examples
 
